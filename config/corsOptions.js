@@ -1,6 +1,6 @@
 // config/corsOptions.js
 const allowedOrigins = [
-  'https://marhaba-frontend.onrender.com',
+  'https://marhabaconnect.onrender.com',
   'https://www.marhabaconnect.com',
   'http://localhost:3000' // add localhost for dev
 ];
