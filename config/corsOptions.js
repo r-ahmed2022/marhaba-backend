@@ -2,7 +2,7 @@
 const allowedOrigins = [
   'https://marhabaconnect.onrender.com',
   'https://www.marhabaconnect.ae',
-  'http://localhost:3000' // add localhost for dev
+  'http://localhost:5173' // add localhost for dev
 ];
 
 const corsOptions = {
