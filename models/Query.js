@@ -2,8 +2,7 @@ import mongoose from 'mongoose';
 
 const querySchema = new mongoose.Schema({
   fullname: String,
-  email: { type: String, required: true },
-  // phone: String,
+  queryemail: { type: String, required: true },
   message: String
 });
 
