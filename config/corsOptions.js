@@ -2,6 +2,7 @@
 const allowedOrigins = [
   'https://marhabaconnect.onrender.com',
   'https://www.marhabaconnect.ae',
+   'http://ns3.dnsinweb.com/~marhabac',
   'http://localhost:5173' // add localhost for dev
 ];
 
