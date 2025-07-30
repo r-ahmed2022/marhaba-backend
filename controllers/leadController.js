@@ -1,6 +1,7 @@
 import Lead from '../models/Lead.js';
 import { leadSchema } from '../validators/leadValidator.js';
 import { sendThankYouEmail } from '../utils/sendEmail.js';
+import { sendEmail } from '../utils/sendEmail.js';
 
 export const saveLead = async (req, res) => {
   const result = leadSchema.safeParse(req.body);
@@ -19,7 +20,16 @@ export const saveLead = async (req, res) => {
     const lead = new Lead({ email });
     await lead.save();
 
-    await sendThankYouEmail(email, req.locale);
+    await sendEmail({
+    to: email,
+    subject: 'Thank You for Your Interest',
+    html: `
+      <h2>We're thrilled you're with us!</h2>
+      <p>Thanks for signing up to be notified about Marhaba Connect. We’ll keep you updated as we move closer to launch.</p>
+      <p style="margin-top:1rem;">Warm wishes, <br /><strong>Team Marhaba Connect</strong></p>
+    `,
+    templateName: 'thankyou'
+    });
 
     res.status(200).json({ message: 'Email saved and thank-you sent!' });
   } catch (error) {

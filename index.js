@@ -14,6 +14,8 @@ const app = express();
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(localize);
+app.use('/static', express.static('public'));
+
 app.use('/api/interest', leadRoutes);
 app.use('/api/query', queryRoutes);
 
