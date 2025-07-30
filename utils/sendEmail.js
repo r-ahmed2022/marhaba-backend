@@ -5,12 +5,20 @@ dotenv.config();
 
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.ionos.com',
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
   }
 });
+
+transporter.verify((err, success) => {
+  if (err) console.error('❌ SMTP connection failed:', err.message);
+  else console.log('✅ SMTP is ready to send');
+});
+
 
 export const sendEmail = async ({ to, subject, html, templateName }) => {
   const mailOptions = {
