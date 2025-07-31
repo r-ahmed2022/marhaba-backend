@@ -11,11 +11,13 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.options('*', cors(corsOptions));
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(localize);
 app.use('/static', express.static('public'));
+app.options(/^\/.*$/, cors(corsOptions), (req, res) => {
+  res.sendStatus(204);
+});
 
 app.use('/api/interest', leadRoutes);
 app.use('/api/query', queryRoutes);
