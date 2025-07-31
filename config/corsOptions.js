@@ -1,10 +1,8 @@
 // config/corsOptions.js
 const allowedOrigins = [
   'https://marhabaconnect.onrender.com',
-  'https://www.marhabaconnect.ae',
-   'http://ns3.dnsinweb.com/~marhabac',
-   'https://ns3.dnsinweb.com/~marhabac',
-  'http://localhost:5173' 
+  'http://www.marhabaconnect.ae',
+   'http://localhost:5173' 
 ];
 
 const corsOptions = {
