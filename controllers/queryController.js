@@ -11,7 +11,11 @@ export const saveQuery = async (req, res) => {
 
   const { fullname, queryemail, message, timestamp } = result.data;
    const finalTimestamp = timestamp || new Date(); 
-      const existingQuery = await Query.findOne({ queryemail, message });
+   const normalizedMessage = message.trim().toLowerCase();
+      const existingQuery = await Query.findOne({ queryemail, 
+      message: { $regex: `^${normalizedMessage}$`, $options: 'i' }
+});
+
 
     if (existingQuery) {
       return res.status(409).json({
