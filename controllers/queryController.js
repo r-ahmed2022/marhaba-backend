@@ -32,8 +32,7 @@ export const saveQuery = async (req, res) => {
       : 'http://localhost:5000';
 
   const logoUrl = `${baseUrl}/static/marhaba_logo.png`;
-  console.log(logoUrl);
-
+  console.log(logoUrl)
 
   const html = `
     <h2>New Business Query Received</h2>
@@ -50,9 +49,9 @@ export const saveQuery = async (req, res) => {
       to: queryemail,
       subject: 'We’ve received your query – Marhaba Connect',
       html: `
-      <div style="max-width:600px;margin:auto;border:1px solid #e0e0e0;border-radius:8px;padding:20px;font-family:sans-serif;background:#f9f9f9;">
+      <div style="max-width:700px;margin:auto;border:1px solid #e0e0e0;border-radius:8px;padding:20px;font-family:sans-serif;background:#f9f9f9;">
         <div style="text-align:center;margin-bottom:20px;">
-          <img src="${logoUrl}" alt="Marhaba Connect" style="height:60px;" />
+          <img src="${logoUrl}" alt="Marhaba Connect" style="height:150px;" />
         </div>
         <h2 style="color:#2c3e50;">Thank you for contacting us, ${fullname}!</h2>
         <p style="font-size:15px;line-height:1.6;color:#444;">
@@ -64,7 +63,9 @@ export const saveQuery = async (req, res) => {
         </div>
         <p style="font-size:14px;color:#666;">
           In the meantime, feel free to explore more at 
-          <a href="#" style="color:#00a896;text-decoration:none;">marhabaconnect.ae</a>.
+          <a href="https://marhabaconnect.ae" target="_blank" rel="noopener noreferrer"
+           style="color:#00a896;text-decoration:none;">https://marhabaconnect.ae</a>
+
         </p>
         <hr style="margin:30px 0;" />
         <p style="font-size:13px;color:#aaa;text-align:center;">
