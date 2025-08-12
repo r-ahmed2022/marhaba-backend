@@ -1,8 +1,10 @@
+// models/Lead.js
 import mongoose from 'mongoose';
 
-const leadSchema = new mongoose.Schema({
-  email: { type: String, required: true }
+export const leadSchema = new mongoose.Schema({
+  email: { type: String, required: true, unique: true },
+  createdAt: { type: Date, default: Date.now }
 });
 
-const Lead = mongoose.model('Lead', leadSchema);
-export default Lead;
+
+export default leadSchema;

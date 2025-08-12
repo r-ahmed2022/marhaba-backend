@@ -1,3 +1,4 @@
+// models/Query.js (refactored for multi-domain setup)
 import mongoose from 'mongoose';
 
 const querySchema = new mongoose.Schema({
@@ -7,7 +8,6 @@ const querySchema = new mongoose.Schema({
   timestamp: { type: Date, default: Date.now }
 });
 
-querySchema.index({ queryemail: 1, message: 1, timestamp: 1 }, { unique: true });
+querySchema.index({ queryemail: 1, message: 1 }, { unique: true });
 
-const Query = mongoose.model('Query', querySchema);
-export default Query;
+export default querySchema;

@@ -2,7 +2,9 @@
 const allowedOrigins = [
   'https://marhabaconnect.onrender.com',
   'https://www.marhabaconnect.ae',
-   'http://localhost:5173' 
+  'https://www.cuttingedge-enterprises.in',
+   'http://localhost:5173',
+   'http://localhost:5174',
 ];
 
 const corsOptions = {
