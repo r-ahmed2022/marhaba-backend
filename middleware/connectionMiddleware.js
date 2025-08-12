@@ -6,7 +6,9 @@ import connections from '../config/db.js';
 dotenv.config();
 
 export function connectDomain(req, res, next) {
-  const host = req.hostname;
+  // const host = req.hostname;
+  const host = req.hostname.replace(/^www\\./, '').toLowerCase();
+
   const firmHeader = req.headers['x-firm'];
     const isLocalhost = host.includes('localhost') || host.includes('127.0.0.1');
   if (isLocalhost) {
@@ -23,10 +25,10 @@ export function connectDomain(req, res, next) {
       return res.status(400).json({ error: 'Invalid X-Firm header value' });
     }
   }  else {
-    if (host.includes('www.cuttingedge-enterprises.in')) {
+    if (host.includes('cuttingedge-enterprises.in')) {
       req.db = connections.cuttingedge;
       req.firm = 'cuttingedge';
-    } else if (host.includes('www.marhabaconnect.ae')) {
+    } else if (host.includes('marhabaconnect.ae')) {
       req.db = connections.marhabaconnect;
       req.firm = 'marhabaconnect';
     } else {
