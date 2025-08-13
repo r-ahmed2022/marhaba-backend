@@ -7,8 +7,12 @@ dotenv.config();
 
 export function connectDomain(req, res, next) {
   // const host = req.hostname;
-  let host = req.hostname.toLowerCase().replace(/^www\./, '').split(':')[0];
-
+  let origin = req.headers.origin || req.headers.referer || '';
+  const host = origin
+              .toLowerCase()
+              .replace(/^https?:\/\//, '')   
+              .replace(/^www\./, '')         
+              .split(':')[0];   
 
   const firmHeader = req.headers['x-firm'];
   console.log('=== Domain Middleware Debug ===');
