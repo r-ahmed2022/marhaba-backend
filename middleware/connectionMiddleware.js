@@ -11,6 +11,14 @@ export function connectDomain(req, res, next) {
 
 
   const firmHeader = req.headers['x-firm'];
+  console.log('=== Domain Middleware Debug ===');
+  console.log('req.hostname:', req.hostname);
+  console.log('req.headers.host:', req.headers.host);
+  console.log('Processed host (lowercase, no www, no port):', host.toLowerCase().replace(/^www\./, '').split(':')[0]);
+  console.log('isLocalhost:', host.includes('localhost') || host.includes('127.0.0.1'));
+  console.log('Full headers:', req.headers);
+  console.log('===============================');
+
     const isLocalhost = host.includes('localhost') || host.includes('127.0.0.1');
   if (isLocalhost) {
     if (!firmHeader) {
