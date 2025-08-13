@@ -7,7 +7,8 @@ dotenv.config();
 
 export function connectDomain(req, res, next) {
   // const host = req.hostname;
-  const host = req.hostname.replace(/^www\\./, '').toLowerCase();
+  let host = req.hostname.toLowerCase().replace(/^www\./, '').split(':')[0];
+
 
   const firmHeader = req.headers['x-firm'];
     const isLocalhost = host.includes('localhost') || host.includes('127.0.0.1');
