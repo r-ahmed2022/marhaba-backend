@@ -38,10 +38,10 @@ export function connectDomain(req, res, next) {
       return res.status(400).json({ error: 'Invalid X-Firm header value' });
     }
   }  else {
-    if (host.includes('cuttingedge-enterprises.in')) {
+    if (host === 'cuttingedge-enterprises.in') {
       req.db = connections.cuttingedge;
       req.firm = 'cuttingedge';
-    } else if (host.includes('marhabaconnect.ae')) {
+    } else if (host === 'marhabaconnect.ae') {
       req.db = connections.marhabaconnect;
       req.firm = 'marhabaconnect';
     } else {
