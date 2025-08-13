@@ -13,6 +13,7 @@ import { fileURLToPath } from 'url';
 dotenv.config();
 initDBConnections();
 const app = express();
+app.set('trust proxy', true);
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(localize);
