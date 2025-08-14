@@ -29,13 +29,14 @@ export const saveQuery = async (req, res) => {
       });
     }
 
-    const baseUrl =
+   /* const baseUrl =
       process.env.NODE_ENV === 'production'
         ? firm === 'cuttingedge'
           ? 'https://cuttingedge-enterprises.in'
           : 'https://marhabaconnect.ae'
-        : 'http://localhost:5000';
-
+        : 'http://localhost:5000'; */
+    
+    const baseUrl = req.hostname;
     const logoFile = firm === 'cuttingedge' ? 'CuttingEdgeEnterprise_logo.png' : 'marhaba_logo.png';
     const logoUrl = `${baseUrl}/static/${logoFile}`;
 
