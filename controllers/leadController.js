@@ -22,7 +22,7 @@ export const saveLead = async (req, res) => {
       : 'http://localhost:5000';
 
   const logoFile = firm === 'cuttingedge' ? 'CuttingEdgeEnterprise_logo.png' : 'marhaba_logo.png';
-  const logoUrl = `${baseUrl}/static/${logoFile}`;
+  const logoUrl = `$/static/${logoFile}`;
    console.log(logoUrl);
   try {
     // Register model on the specific DB connection

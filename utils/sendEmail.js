@@ -49,7 +49,7 @@ export const sendEmail = async ({ to, subject, html, templateName, firm }) => {
   }
 
   const mailOptions = {
-    from: `"${fromDisplay}" <${firm === 'cuttingedge' ? (process.env.EMAIL_USER_CUTTINGEDGE) : (process.env.EMAIL_USER_MARHABA || process.env.EMAIL_USER)}>`,
+    from: `"${fromDisplay}" <${firm === 'cuttingedge' ? (process.env.EMAIL_USER_CUTTINGEDGE) : (process.env.EMAIL_USER_MARHABA)}>`,
     to,
     subject,
     html
