@@ -1,4 +1,5 @@
 // utils/sendEmail.js
+import fs from 'fs';
 import nodemailer from 'nodemailer';
 import EmailLog from '../models/EmailLog.js';
 import dotenv from 'dotenv';
@@ -6,13 +7,15 @@ dotenv.config();
 
 // Create two separate transporters: one for Marhaba, one for Cutting Edge
 const marhabaTransporter = nodemailer.createTransport({
-  host: 'smtp.ionos.com',
+  host: 'mail.marhabaconnect.ae',
   port: 587,
   secure: false,
   auth: {
     user: process.env.EMAIL_USER_MARHABA || process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS_MARHABA || process.env.EMAIL_PASS
-  }
+  },
+
+
 });
 
 // Dummy SMTP provider for Cutting Edge (replace with real when available)
