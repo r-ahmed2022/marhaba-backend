@@ -3,6 +3,7 @@ const allowedOrigins = [
   'https://marhabaconnect.onrender.com',
   'https://www.marhabaconnect.ae',
     'https://marhabaconnect.ae',
+    'https://customercare.marhabaconnect.ae',
 ,  'https://www.cuttingedge-enterprises.in',
 ,  'https://cuttingedge-enterprises.in',
    'http://localhost:5173',
