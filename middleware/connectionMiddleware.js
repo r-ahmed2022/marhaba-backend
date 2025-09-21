@@ -14,7 +14,7 @@ export function connectDomain(req, res, next) {
               .replace(/^www\./, '')         
               .split(':')[0];   
 
-  const firmHeader = req.headers['x-firm'];
+  const firmHeader = req.headers['x-firm'] || 'marhabaconnect';
   const isLocalhost = host.includes('localhost') || host.includes('127.0.0.1');
   if (isLocalhost) {
     if (!firmHeader) {
