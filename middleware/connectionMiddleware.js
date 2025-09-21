@@ -36,7 +36,7 @@ export function connectDomain(req, res, next) {
       req.db = connections.marhabaconnect;
       req.firm = 'marhabaconnect';
     }
-   else if (host === 'customer.marhabaconnect.ae') {
+   else if (host === 'customercare.marhabaconnect.ae') {
       req.db = connections.marhabaconnect;
       req.firm = 'marhabaconnect';
     } 
