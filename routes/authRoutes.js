@@ -4,7 +4,7 @@ import  verifyRoute  from '../middleware/verifyRoute.js';
 import { connectDomain } from '../middleware/connectionMiddleware.js';
 const router = express.Router();
 router.post('/signup', connectDomain, signup );
-router.post('/login', connectDomain, login);   
+router.post('/login', login);   
 router.get('/logout', logout);
 
 router.put('/update', verifyRoute, updateProfile);
