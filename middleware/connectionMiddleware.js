@@ -1,6 +1,5 @@
 // middleware/connectionMiddleware.js
 import dotenv from 'dotenv';
-import { get } from 'mongoose';
 import connections from '../config/db.js';
 
 dotenv.config();
@@ -36,7 +35,12 @@ export function connectDomain(req, res, next) {
     } else if (host === 'marhabaconnect.ae') {
       req.db = connections.marhabaconnect;
       req.firm = 'marhabaconnect';
-    } else {
+    }
+   else if (host === 'customer.marhabaconnect.ae') {
+      req.db = connections.marhabaconnect;
+      req.firm = 'marhabaconnect';
+    } 
+    else {
       return res.status(400).json({ error: 'Unknown domain' });
     }
   }

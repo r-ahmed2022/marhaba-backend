@@ -42,7 +42,7 @@ app.use(cookieParser());
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 app.use(express.urlencoded({ extended: true }));
 app.use("/static", express.static(path.join(__dirname, "public")));
-app.options(/^\/.*$/, cors(corsOptions), (req, res) => res.sendStatus(204));
+  app.options(/^\/.*$/, cors(corsOptions), (req, res) => res.sendStatus(204));
 
 // Routes
 app.use(connectDomain);
