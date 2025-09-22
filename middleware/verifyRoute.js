@@ -6,6 +6,7 @@ dotenv.config();
 const verifyRoute = async (req, res, next) => {
   try {
     const token = req?.cookies?.token;
+    console.log("Token from cookies:", token); // Debugging line
 
     if (!token) {
       return res.status(401).json({ error: "You are not authenticated" });

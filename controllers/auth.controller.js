@@ -82,6 +82,7 @@ export async function updateProfile(req, res) {
 
 export function authenticated(req, res) {
     try {
+        console.log("Incoming cookies:", req.cookies);
          res.status(200).json(req.user);
     }catch (error) {
         console.log(error.message)
