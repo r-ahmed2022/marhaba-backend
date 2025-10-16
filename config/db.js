@@ -19,7 +19,6 @@ export async function initDBConnections() {
       minPoolSize: 2,
       serverSelectionTimeoutMS: 5000,
       socketTimeoutMS: 45000,
-      bufferCommands: false,
     });
     console.log('✅ Connected to Default DB');
   } catch (err) {
